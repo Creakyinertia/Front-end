@@ -1,18 +1,54 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>JavaScript Arrays</h1>
-<h2>The join() Method</h2>
-
-<p>The join() method joins array elements into a string.</p>
-<p>It this example we have used " * " as a separator between the elements:</p>
-
-<p id="demo"></p>
-
-<script>
-const fruits = ["Banana", "Orange", "Apple", "Mango"];
-document.getElementById("demo").innerHTML = fruits.join(" * ");
-</script>
-
-</body>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <!-- <script src="Newone.js" ></script> -->
+        <script src="Arraymethods2.js" ></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>document</title>
+    </head>
+    <body>
+        
+        <div>
+            
+            <button onclick="myFunction()">Show array</button>
+            <br/>
+            <br/>
+            <input onchange="myFu(value)" type="number" placeholder="Enter the num u wanna add"/>
+            <button onclick="myFu()">push</button>
+            <button onclick="myF()">pop</button>
+            <p id="demo"></p>
+            <p id="as"></p>
+           
+            <div>
+                <input onchange="my(value)" type="number" placeholder="Enter the number"/>
+                <button onclick="my()" >index</button>
+            </div>
+            <br/>
+            <div>
+                <input onchange="m(value)" type="number" placeholder="Enter the first number"/>
+                <input onchange="n(value)" type="number" placeholder="Enter the second number"/>
+                <br/>
+                <button onclick="add(v1,v2)" >add</button>
+                <button onclick="sub(v1,v2)" >sub</button>
+                <button onclick="mul(v1,v2)" >mul</button>
+                <button onclick="div(v1,v2)" >div</button>
+                <p id="calc"></p>
+            </div>
+            <div>
+                <p>Array methods:</p>
+                <p>['Danny','Angel','Sarah','Winston']</p>
+                <button onclick="joinS()" >Join</button>
+                <p id="qw"></p>
+                <input onchange="m(value)" type="number" placeholder="Enter the first index"/>
+                <input onchange="n(value)" type="number" placeholder="Enter the second index"/>
+                <button onclick="sliceS()" >Slice</button>
+                <p id="asd"></p>
+                <button onclick="forSeach()" >ForEach</button>
+                <p id="asde"></p>
+            </div>
+        </div>
+    </body>
 </html>

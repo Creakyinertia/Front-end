@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table id="table" border="1">
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>City</th>
+        <th>Phone</th>
+        <th>Website</th>
+      </tr>
+    </table>
+
+    <script>
+      let table = document.getElementById("table");
+      const url = "https://jsonplaceholder.typicode.com/users";
+      fetch(url)
+        .then((res) => res.json())
+        .then((json) => {
+          json.forEach((elem) => {
+            let tr = document.createElement("tr");
+            tr.innerHTML = `
+      <td>${elem.id}</td>
+      <td>${elem.name}</td>
+      <td>${elem.username}</td>
+      <td>${elem.email}</td>
+      <td>${elem.address.city}</td>
+      <td>${elem.phone}</td>
+      <td>${elem.website}</td>
+      `;
+            table.appendChild(tr);
+            console.log(elem);
+          });
+        });
+    </script>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            /* letter-spacing: 1px; */
+        }
+        body{
+            background-color: rgb(235, 235, 235);
+            display: grid;
+            place-items: center;
+            height: 100vh;
+            width: 100%;
+        }
+      table {
+        border-collapse: collapse;
+        background: white;
+      }
+      tr th,tr td{
+        padding: 20px 25px;
+      }
+      tr th{
+        text-transform: uppercase;
+      }
+    </style>
+  </body>
+</html>
+
