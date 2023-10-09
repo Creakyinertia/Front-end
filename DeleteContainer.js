@@ -1,15 +1,7 @@
 import React from 'react';
-import { useState } from 'react';
-const DeleteContainer= (deletedItems, onRestore, permanentDelete) => {
-//     const [data, setData] = useState(deletedItems);
-//     console.log(deletedItems)
-//     const hDelete = (item) => {
-//         const abc=deletedItems.filter((d) => d.id !== item.id);
-//         setData(abc)
-//       };
-//    console.log(data)
+function DeleteContainer({ deletedItems, onRestore,handlePermanent }) {
   return (
-    <table>
+  <table>
     <thead>
       <tr>
         <th>ID</th>
@@ -39,18 +31,14 @@ const DeleteContainer= (deletedItems, onRestore, permanentDelete) => {
           <button onClick={() => onRestore(item)}>Restore</button>
           </td>
           <td>
-          <button onClick={()=>permanentDelete(item)}>Delete</button>
+          <button onClick={()=>handlePermanent(item)}>Delete</button>
           </td>
         </tr>
-      ))}
+      ))
+      
+      }
     </tbody>
   </table>
   );
 }
 export default DeleteContainer;
-
-
-
-// employees.sort((a, b) => {
-//     return a.age - b.age;
-// });
