@@ -1,71 +1,23 @@
-const redux = require('redux')
-const reduxLogger = require('redux-logger')
+import 'core-js/modules/es7.array.includes';
+import 'core-js/modules/es6.array.fill';
+import 'core-js/modules/es6.string.includes';
+import 'core-js/modules/es6.string.trim';
+import 'core-js/modules/es7.object.values';
 
-const createStore=redux.createStore
-const combineReducers=redux.combineReducers
-const applyMiddleware=redux.applyMiddleware
-const logger=reduxLogger.createLogger()
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.scss';
+import App from './App';
+import * as serviceWorker from './serviceWorker';
+import { HashRouter as Router } from 'react-router-dom';
 
-const BUY_CAKE='BUY_CAKE'
-const BUY_ICECREAM='BUY_ICECREAM'
+createRoot(document.getElementById('root')).render(
+  <Router>
+    <App />
+  </Router>
+);
 
-const buycake=()=>{
-    return{
-        type:BUY_CAKE,
-        payload:'first_redux_action'
-    }
-}
-const icecream=()=>{
-    return{
-        type:BUY_ICECREAM,
-        payload:'first_redux_action'
-    }
-}
-
-const initialCakeState={
-    numOfCakes:10
-}
-const initialIcecreamState={
-    numOfIcecreams:20
-}
-
-const cakeReducer=(state=initialCakeState,action)=>{
-    switch(action.type){
-        case BUY_CAKE:
-            return{ 
-                ...state,
-                numOfCakes:state.numOfCakes-1
-            }
-        // case BUY_ICECREAM:
-        //     return{ ...state,
-        //         numOfIcecreams:state.numOfIcecreams-1
-        //     }
-        default : return state
-    }
-}
-const icecreamReducer=(state=initialIcecreamState,action)=>{
-    switch(action.type){
-        case BUY_ICECREAM:
-            return{ 
-                ...state,
-                numOfIcecreams:state.numOfIcecreams-1
-            }
-        default : return state
-    }
-}
-
-const rootReducer=combineReducers({
-    cake:cakeReducer,
-    icecream:icecreamReducer
-})
-
-const store=createStore(rootReducer,applyMiddleware(logger))
-console.log('initialState',store.getState())
-const unsubscirbe=store.subscribe(()=>{})
-store.dispatch(buycake())
-store.dispatch(buycake())
-store.dispatch(buycake())
-store.dispatch(icecream())
-store.dispatch(icecream())
-store.dispatch(icecream())
-unsubscirbe()
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: https://bit.ly/CRA-PWA
+serviceWorker.unregister();
