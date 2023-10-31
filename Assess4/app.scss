@@ -1,0 +1,60 @@
+@use '@carbon/layout';
+
+
+#c1,#c2,#c3 {
+  margin-top: layout.$spacing-12;
+  margin-left: layout.$spacing-12;
+  width: layout.rem(240px);
+  height: layout.rem(24px);
+  text-align:center;
+}
+
+#fname,#lname,#email,#gender,#password{
+    width: layout.rem(240px);
+    height: layout.rem(24px);
+      
+}
+
+#bod{
+    width: layout.rem(240px);
+    margin-left: layout.$spacing-06;
+}
+
+#butadd{
+    margin-top: layout.$spacing-04;
+    margin-left:layout.$spacing-09;
+}
+
+// #logpassword,#username{
+//     width: layout.rem(240px);
+//     height: layout.rem(24px);
+// }
+
+#logbut{
+    margin-top: layout.$spacing-04;
+    margin-bottom: layout.$spacing-04;
+    margin-left:40%;
+}
+
+.logform{
+    display: grid;
+    place-items: center;
+    margin-right:30%;
+    margin-left:30%;
+    margin-top: layout.$spacing-13;
+   border: solid 1px  black;
+   .cds--text-input{
+    margin-bottom: 20px;
+   }
+}
+
+.headd{
+    display: grid;
+    place-items: center;
+    margin-left:layout.$spacing-02;
+}
+
+.buthome{
+    margin-left: 90%;
+    margin-top: 1%;
+}
