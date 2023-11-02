@@ -1,0 +1,15 @@
+@use '@carbon/layout';
+@use '@carbon/colors';
+
+
+body{
+    background: colors.$gray-30;
+}
+
+.bordt{
+    padding: layout.$spacing-05;
+}
+
+.borda{
+    padding: layout.$spacing-05;
+}
